@@ -9,6 +9,14 @@ resource "github_repository" "repo" {
   }
 }
 
+resource "github_repository_file" "backend" {
+  repository = github_repository.repo.name
+  file = "backend.tf"
+  content = templatefile("${path.module}/backend.tpl",{org = var.organization,wsname=var.name})
+  commit_message = "deault backend.tf"
+}
+
+
 resource "tfe_workspace" "workspace" {
   description           = var.workspace_description
   allow_destroy_plan    = true
