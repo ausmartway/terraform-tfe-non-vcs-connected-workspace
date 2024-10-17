@@ -21,7 +21,6 @@ resource "tfe_workspace" "workspace" {
   description           = var.workspace_description
   allow_destroy_plan    = true
   auto_apply            = true
-  execution_mode        = "remote"
   file_triggers_enabled = false
   global_remote_state   = false
   name = var.name
