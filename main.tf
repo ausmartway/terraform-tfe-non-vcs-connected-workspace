@@ -22,7 +22,7 @@ resource "tfe_workspace" "workspace" {
   allow_destroy_plan    = true
   auto_apply            = true
   file_triggers_enabled = false
-  global_remote_state   = false
+  # global_remote_state   = false
   name = var.name
   organization                  = var.organization
   queue_all_runs                = true
